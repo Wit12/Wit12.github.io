@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1100px 600px at 12% -10%, #3a1858 0%, transparent 60%),
+    radial-gradient(900px 500px at 100% 10%, #4a1240 0%, transparent 55%),
+    linear-gradient(180deg, #0c0716, #150c26 40%, #1d1033);
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-sm transition-transform duration-200;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-hot to-[#ff6bb5] text-white shadow-glow hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply border border-line bg-white/5 text-white hover:border-hot2 hover:text-hot2;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-hot2 font-semibold text-xs tracking-widest uppercase mb-3;
+  }
+  .eyebrow::before {
+    content: '♥';
+    font-size: 0.85rem;
+  }
+  .panel {
+    @apply bg-panel/80 border border-line rounded-2xl;
+  }
+}
